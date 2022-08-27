@@ -1,14 +1,15 @@
 import { ActionPanel, List, Action } from "@raycast/api";
+import { Page } from "../types";
 
 export function PageList (props: {
   project: string,
-  pages?: [];
+  pages?: Page[] | null;
 }) {
   const { project, pages } = props;
 
   return (
     <List isLoading={!pages}>
-      {pages?.map((page: any) => (
+      {pages?.map((page: Page) => (
         <List.Item
           key={page.id}
           icon="list-icon.png"
